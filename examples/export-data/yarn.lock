@@ -8807,6 +8807,11 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-table-plugins@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-table-plugins/-/react-table-plugins-1.0.0.tgz#9dde491785246651d7612da146d28bb10c9d5a5b"
+  integrity sha512-WJUvPVz5SdHJNoIi1/M0G4gc3QGVDbH8vQwQpaGmIP8C/v1GgQ56zdD0cQFCDpMWMDdmC7M50tDgLBOHF5FEdw==
+
 react-table@7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.1.0.tgz#c975cd67e917c54190b6c9df29f085285b0c3f4e"
