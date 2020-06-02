@@ -1,0 +1,26 @@
+{
+  "name": "react-table-plugins",
+  "version": "1.0.0",
+  "description": "This contains miscellaneous react-table v7 plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gargroh/react-table-plugins.git"
+  },
+  "keywords": [
+    "react-table",
+    "v7",
+    "plugins",
+    "useExportData",
+    "useColumnSummary"
+  ],
+  "author": "Rohit Garg <rohit08133@gmail.com> (https://github.com/gargroh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gargroh/react-table-plugins/issues"
+  },
+  "homepage": "https://github.com/gargroh/react-table-plugins#readme"
+}
