@@ -1,6 +1,6 @@
 {
   "name": "react-table-plugins",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "description": "This contains miscellaneous react-table v7 plugins",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
