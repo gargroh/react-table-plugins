@@ -1,6 +1,5 @@
 import React from "react";
-import { getFirstDefined } from "react-table/utils";
-import { ensurePluginOrder } from "react-table/publicUtils";
+import { ensurePluginOrder } from "react-table";
 
 // Get exported file name(do not specify extension here)
 const defaultGetExportFileName = ({ fileType, all }) => {
@@ -119,5 +118,13 @@ function downloadFileViaBlob(fileBlob, fileName, type) {
     link.download = `${fileName}.${type}`;
     link.href = dataUrl;
     link.click();
+  }
+}
+
+export function getFirstDefined(...args) {
+  for (let i = 0; i < args.length; i += 1) {
+    if (typeof args[i] !== "undefined") {
+      return args[i];
+    }
   }
 }
