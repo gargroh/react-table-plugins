@@ -26,6 +26,7 @@ import {
 ```
 
 Plug it in same way as other react-table plugins are used:
+
 ```diff
 function MyTable() {
   const instance = useTable(
@@ -47,3 +48,7 @@ function MyTable() {
 - Export Data
   - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/export-data)
   - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/export-data)
+
+## ChangeLog
+
+Please visit [releases](https://github.com/gargroh/react-table-plugins/releases)
