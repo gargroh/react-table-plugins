@@ -18,10 +18,22 @@ To import React Table Plugins:
 
 ```js
 import {
-  useExportData,
-  useColumnSummary,
+  useExportData
   ...
 } from 'react-table-plugins'
+```
+
+Plug it in same way as other react-table plugins are used:
+```diff
+function MyTable() {
+  const instance = useTable(
+    {
+      data,
+      columns,
+    },
++   useExportData
+  )
+}
 ```
 
 ## Documentation
