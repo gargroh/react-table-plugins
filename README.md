@@ -2,6 +2,8 @@
 
 This repository contains miscellaneous [react-table](https://github.com/tannerlinsley/react-table) v7 plugins
 
+<a href="#badge"><img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg"></a>
+
 ## Installation
 
 Install as a dependency using `npm` or `yarn`
