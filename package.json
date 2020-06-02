@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/gargroh/react-table-plugins/issues"
   },
-  "homepage": "https://github.com/gargroh/react-table-plugins#readme"
+  "homepage": "https://github.com/gargroh/react-table-plugins#readme",
+  "peerDependencies": {
+    "react-table": "^7.0.5"
+  }
 }
