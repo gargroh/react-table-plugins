@@ -28,19 +28,19 @@ The following options are supported via the main options object passed to `useTa
 The following options are supported on any `Column` object passed to the `columns` options in `useTable()`
 
 - `disableExport: Bool`
+
   - Optional
   - Defaults to `false`
   - If set to `true`, this column will not be exported with data
 
--`getColumnExportValue: Function(column) => string`
+- `getColumnExportValue: Function(column) => string`
 
-- Optional
-- This function is used to overwrite exported value of Header for this column
+  - Optional
+  - This function is used to overwrite exported value of Header for this column
 
--`getCellExportValue: Function(row, column) => string`
-
-- Optional
-- This function is used to overwrite exported value for this cell
+- `getCellExportValue: Function(row, column) => string`
+  - Optional
+  - This function is used to overwrite exported value for this cell
 
 ### Instance Properties
 
