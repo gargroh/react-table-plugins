@@ -33,7 +33,7 @@ useExportData.pluginName = "useExportData";
 function useInstance(instance) {
   const {
     rows,
-    initialRows,
+    initialRows = [],
     allColumns,
     disableExport,
     getExportFileName = defaultGetExportFileName,
