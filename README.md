@@ -42,12 +42,18 @@ function MyTable() {
 ## Documentation
 
 - [useExportData](./docs/useExportData.md) - Exporting data from table
+- [useColumnSummary](./docs/useColumnSummary.md) - For displaying and calculating column summaries
 
 ## Examples
 
 - Export Data
+
   - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/export-data)
   - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/export-data)
+
+- Column Summary
+  - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/column-summary)
+  - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/column-summary)
 
 ## ChangeLog
 
