@@ -18,7 +18,8 @@
     "v7",
     "plugins",
     "useExportData",
-    "useColumnSummary"
+    "useColumnSummary",
+    "useCellRangeSelection"
   ],
   "author": "Rohit Garg <rohit08133@gmail.com> (https://github.com/gargroh)",
   "license": "MIT",
