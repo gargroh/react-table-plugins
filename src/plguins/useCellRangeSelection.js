@@ -215,9 +215,7 @@ function useInstance (instance) {
   //   const selectedFlatCells = []
   //   rows.forEach(row=> {
   //     row.allCells && row.allCells.forEach(cell => {
-  //       const isSelected = !!selectedCellIds[cell.id]
-  //       console.log("called", isSelected);
-  //       cell.isSelected = !!isSelected
+  //       cell.isSelected = !!selectedCellIds[cell.id]
   //       if(isSelected) {
   //         selectedFlatCells.push(cell)
   //       }

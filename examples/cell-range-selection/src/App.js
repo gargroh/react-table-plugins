@@ -73,14 +73,14 @@ function Table ({ columns, data }) {
   }, [cellsById])
 
   // getCellsBetweenId returns all cell Ids between two cell Id, and then setState for selectedCellIds
-  const setCells = React.useCallback(() => {
+  const selectRandomCells = React.useCallback(() => {
     const cellsBetween = getCellsBetweenId(...getRandomCellIds())
     setSelectedCellIds(cellsBetween)
   }, [getCellsBetweenId, setSelectedCellIds, getRandomCellIds])
 
   return (
     <>
-      <button onClick={setCells}>setState selectedCellIds</button>
+      <button onClick={selectRandomCells}>Select cells randomly</button>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
@@ -116,6 +116,9 @@ function Table ({ columns, data }) {
           })}
         </tbody>
       </table>
+      <pre>
+        <code>{JSON.stringify({selectedCellIds, currentSelectedCellIds}, null, 2)}</code>
+      </pre>
     </>
   )
 }
