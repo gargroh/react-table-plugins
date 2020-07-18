@@ -2,16 +2,9 @@
 
 This repository contains miscellaneous [react-table](https://github.com/tannerlinsley/react-table) v7 plugins
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 <a href="#badge"><img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg"></a>
-
 <a href="https://npmjs.com/package/react-table-plugins" rel="nofollow">
-  <img alt="" src="https://img.shields.io/npm/v/react-table-plugins" style="max-width:100%;">
+<img alt="" src="https://img.shields.io/npm/v/react-table-plugins" style="max-width:100%;">
 </a>
 
 ## Installation
@@ -72,6 +65,12 @@ Please visit [releases](https://github.com/gargroh/react-table-plugins/releases)
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
