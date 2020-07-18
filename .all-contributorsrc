@@ -17,6 +17,17 @@
         "review",
         "tool"
       ]
+    },
+    {
+      "login": "07harish",
+      "name": "Harish Kulkarni",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/27046938?v=4",
+      "profile": "https://github.com/07harish",
+      "contributions": [
+        "code",
+        "example",
+        "plugin"
+      ]
     }
   ],
   "contributorsPerLine": 7,
