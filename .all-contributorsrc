@@ -1,0 +1,39 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "gargroh",
+      "name": "Rohit Garg",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/42495927?v=4",
+      "profile": "https://github.com/gargroh",
+      "contributions": [
+        "code",
+        "example",
+        "plugin",
+        "review",
+        "tool"
+      ]
+    },
+    {
+      "login": "07harish",
+      "name": "Harish Kulkarni",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/27046938?v=4",
+      "profile": "https://github.com/07harish",
+      "contributions": [
+        "code",
+        "example",
+        "plugin"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-table-plugins",
+  "projectOwner": "gargroh",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
