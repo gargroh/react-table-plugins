@@ -211,10 +211,26 @@ function useInstance (instance) {
     [allColumns, cellsById, cellIdSplitBy, rows]
   )
 
+  // const selectedFlatCells = React.useMemo(()=> {
+  //   const selectedFlatCells = []
+  //   rows.forEach(row=> {
+  //     row.allCells && row.allCells.forEach(cell => {
+  //       const isSelected = !!selectedCellIds[cell.id]
+  //       console.log("called", isSelected);
+  //       cell.isSelected = !!isSelected
+  //       if(isSelected) {
+  //         selectedFlatCells.push(cell)
+  //       }
+  //     })
+  //   })
+  //   return selectedFlatCells
+  // }, [rows, selectedCellIds])
+
   Object.assign(instance, {
     getCellsBetweenId,
     cellsById,
-    setSelectedCellIds
+    setSelectedCellIds,
+    // selectedFlatCells
   })
 }
 
