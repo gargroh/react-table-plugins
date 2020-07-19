@@ -214,7 +214,7 @@ function useInstance (instance) {
   Object.assign(instance, {
     getCellsBetweenId,
     cellsById,
-    setSelectedCellIds,
+    setSelectedCellIds
   })
 }
 

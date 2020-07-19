@@ -9,9 +9,9 @@
 
 - `Mouse drag` - Click the mouse and drag to select a `cell range` and this will clear any existing selected cells/ranges
 
-- `Ctrl + Mouse drag` - Holding `Ctr` and `Mouse drag` to select `multiple cell ranges` and this will keep any existing selected cells/ranges
+- `Ctrl + Mouse drag` - Holding `Ctr` and `Mouse drag` will select `multiple cell ranges` and this keeps all existing selected cells/ranges
 
-- `Ctrl + click` - For cell selection and also keeps any existing selected cells/ranges
+- `Ctrl + click` - For cell selection and this keeps all existing selected cells/ranges
 
 ### Table Options
 
