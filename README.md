@@ -42,12 +42,17 @@ function MyTable() {
 ## Documentation
 
 - [useExportData](./docs/useExportData.md) - Exporting data from table
+- [useCellRangeSelection](./docs/useCellRangeSelection.md) - Allows Cell selection and Cell range selection
 
 ## Examples
 
 - Export Data
   - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/export-data)
   - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/export-data)
+  
+- Cell Range Selection
+  - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/cell-range-selection)
+  - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/cell-range-selection)
 
 ## ChangeLog
 
