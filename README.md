@@ -67,9 +67,7 @@ Please visit [releases](https://github.com/gargroh/react-table-plugins/releases)
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -79,12 +77,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/gargroh"><img src="https://avatars3.githubusercontent.com/u/42495927?v=4" width="100px;" alt=""/><br /><sub><b>Rohit Garg</b></sub></a><br /><a href="https://github.com/gargroh/react-table-plugins/commits?author=gargroh" title="Code">💻</a> <a href="#example-gargroh" title="Examples">💡</a> <a href="#plugin-gargroh" title="Plugin/utility libraries">🔌</a> <a href="https://github.com/gargroh/react-table-plugins/pulls?q=is%3Apr+reviewed-by%3Agargroh" title="Reviewed Pull Requests">👀</a> <a href="#tool-gargroh" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/07harish"><img src="https://avatars3.githubusercontent.com/u/27046938?v=4" width="100px;" alt=""/><br /><sub><b>Harish Kulkarni</b></sub></a><br /><a href="https://github.com/gargroh/react-table-plugins/commits?author=07harish" title="Code">💻</a> <a href="#example-07harish" title="Examples">💡</a> <a href="#plugin-07harish" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="http://www.propellersoftware.net"><img src="https://avatars1.githubusercontent.com/u/119640?v=4" width="100px;" alt=""/><br /><sub><b>Colin Asquith</b></sub></a><br /><a href="https://github.com/gargroh/react-table-plugins/commits?author=colinasquith" title="Documentation">📖</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
