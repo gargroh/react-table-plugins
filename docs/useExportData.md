@@ -49,7 +49,7 @@ The following values are provided to the table `instance`:
 - `exportData: Function(fileType: string, all: boolean)`
   - This function is used to initiate downloading of data
   - Parameter `all` defined whether you want to download full data or current view only.
-    - `Current view` considers sorted, filtered data that is currenlty visible to user.
+    - `Current view` considers sorted, filtered data that is currently visible to user.
 
 ### Column Properties
 
