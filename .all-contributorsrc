@@ -28,6 +28,15 @@
         "example",
         "plugin"
       ]
+    },
+    {
+      "login": "colinasquith",
+      "name": "Colin Asquith",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/119640?v=4",
+      "profile": "http://www.propellersoftware.net",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
