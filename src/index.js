@@ -1,2 +1,2 @@
-export { useColumnSummary } from "./plguins/useColumnSummary";
-export { useExportData } from "./plguins/useExportData";
+export { useColumnSummary } from "./plugins/useColumnSummary";
+export { useExportData } from "./plugins/useExportData";
