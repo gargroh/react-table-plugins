@@ -102,7 +102,7 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
         fontSize: 11,
       },
     });
-    doc.save("data.pdf");
+    doc.save(`${fileName}.pdf`);
 
     return false;
   }
