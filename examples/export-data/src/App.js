@@ -5,7 +5,7 @@ import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import XLSX from "xlsx";
 import JsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
+import "jspdf-autotable";
 
 import makeData from "./makeData";
 
