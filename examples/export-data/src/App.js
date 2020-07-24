@@ -4,6 +4,8 @@ import { useTable, useSortBy, useFilters } from "react-table";
 import { useExportData } from "react-table-plugins";
 import Papa from "papaparse";
 import XLSX from "xlsx";
+import JsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 import makeData from "./makeData";
 
@@ -85,6 +87,25 @@ function getExportFileBlob({ columns, data, fileType, fileName }) {
     // Returning false as downloading of file is already taken care of
     return false;
   }
+  //PDF example
+  if (fileType === "pdf") {
+    const headerNames = columns.map((column) => column.exportValue);
+    const doc = new JsPDF();
+    doc.autoTable({
+      head: [headerNames],
+      body: data,
+      margin: { top: 20 },
+      styles: {
+        minCellHeight: 9,
+        halign: "left",
+        valign: "center",
+        fontSize: 11,
+      },
+    });
+    doc.save("data.pdf");
+
+    return false;
+  }
 
   // Other formats goes here
   return false;
@@ -112,6 +133,13 @@ function Table({ columns, data }) {
 
   return (
     <>
+      <button
+        onClick={() => {
+          exportData("pdf", false);
+        }}
+      >
+        Export as PDF
+      </button>
       <button
         onClick={() => {
           exportData("csv", true);
