@@ -135,13 +135,6 @@ function Table({ columns, data }) {
     <>
       <button
         onClick={() => {
-          exportData("pdf", false);
-        }}
-      >
-        Export as PDF
-      </button>
-      <button
-        onClick={() => {
           exportData("csv", true);
         }}
       >
@@ -154,7 +147,6 @@ function Table({ columns, data }) {
       >
         Export Current View as CSV
       </button>
-
       <button
         onClick={() => {
           exportData("xlsx", true);
@@ -169,6 +161,20 @@ function Table({ columns, data }) {
       >
         Export Current View as xlsx
       </button>
+      <button
+        onClick={() => {
+          exportData("pdf", true);
+        }}
+      >
+        Export All as PDF
+      </button>{" "}
+      <button
+        onClick={() => {
+          exportData("pdf", false);
+        }}
+      >
+        Export Current View as PDF
+      </button>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -176,8 +182,10 @@ function Table({ columns, data }) {
               {headerGroup.headers.map((column) => (
                 // Add the sorting props to control sorting. For this example
                 // we can add them into the header props
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
+                <th {...column.getHeaderProps()}>
+                  <span {...column.getSortByToggleProps()}>
+                    {column.render("Header")}
+                  </span>
                   <div>
                     {column.canFilter ? column.render("Filter") : null}
                     <span>
