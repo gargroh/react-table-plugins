@@ -45,7 +45,10 @@ function MyTable() {
 ## Documentation
 
 - [useExportData](./docs/useExportData.md) - Exporting data from table
+
 - [useColumnSummary](./docs/useColumnSummary.md) - For displaying and calculating column summaries
+
+- [useCellRangeSelection](./docs/useCellRangeSelection.md) - Allows Cell selection and Cell range selection
 
 ## Examples
 
@@ -57,6 +60,10 @@ function MyTable() {
 - Column Summary
   - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/column-summary)
   - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/column-summary)
+
+- Cell Range Selection
+  - [Source](https://github.com/gargroh/react-table-plugins/tree/master/examples/cell-range-selection)
+  - [Open in CodeSandbox](https://codesandbox.io/s/github/gargroh/react-table-plugins/tree/master/examples/cell-range-selection)
 
 ## ChangeLog
 
