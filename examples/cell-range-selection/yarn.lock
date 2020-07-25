@@ -8817,10 +8817,10 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-table-plugins@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/react-table-plugins/-/react-table-plugins-1.0.7.tgz#f0f658c168de0db9e6166e8248c3d378acec40e3"
-  integrity sha512-Oi9dCdde6GPMsagcwoQhsssrL2xqhH6FcxMmF7BgQxK/LjZKAZM8pgB2SJyZOtwrQ06hGkRozth5G0jDZniHCQ==
+react-table-plugins@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-table-plugins/-/react-table-plugins-1.3.0.tgz#b1cf202103dcd04287724b29e81df6edd3c68d95"
+  integrity sha512-prX/88fBwIt3RQfi/jyRmlRyDcOr4JBNs1t52ucqCGqI8XrD+Kj6VdRw6TYtwk5iXOWOeyzsTaYDeHg4hDGfsw==
 
 react-table@^7.3.2:
   version "7.3.2"
