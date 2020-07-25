@@ -28,6 +28,24 @@
         "example",
         "plugin"
       ]
+    },
+    {
+      "login": "colinasquith",
+      "name": "Colin Asquith",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/119640?v=4",
+      "profile": "http://www.propellersoftware.net",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "brisibe",
+      "name": "Joseph Brisibe",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/43288228?v=4",
+      "profile": "https://github.com/brisibe",
+      "contributions": [
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,

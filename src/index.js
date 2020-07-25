@@ -1,3 +1,3 @@
-export { useColumnSummary } from "./plguins/useColumnSummary";
-export { useExportData } from "./plguins/useExportData";
-export { useCellRangeSelection } from './plguins/useCellRangeSelection';
+export { useColumnSummary } from "./plugins/useColumnSummary";
+export { useExportData } from "./plugins/useExportData";
+export { useCellRangeSelection } from './plugins/useCellRangeSelection';
