@@ -7,6 +7,8 @@ actions.cellRangeSelecting = 'cellRangeSelecting'
 actions.cellRangeSelectionEnd = 'cellRangeSelectionEnd'
 actions.setSelectedCellIds = 'setSelectedCellIds' // exposed to user on an instance
 
+const defaultCellIdSplitBy = '___'
+
 export const useCellRangeSelection = hooks => {
   hooks.getCellRangeSelectionProps = [defaultgetCellRangeSelectionProps]
   hooks.stateReducers.push(reducer)
@@ -19,58 +21,64 @@ useCellRangeSelection.pluginName = 'useCellRangeSelection'
 const defaultgetCellRangeSelectionProps = (props, { instance, cell }) => {
   const {
     state: { isSelectingCells },
-    dispatch
+    dispatch,
   } = instance
 
-  // These actions are not exposed on an instance, as we provide setSelectedCells and getCellsBetweenId.
-  const start = (startCell, event) =>
+  const start = (event, startCell) => {
     dispatch({ type: actions.cellRangeSelectionStart, startCell, event })
-  const selecting = (selectingEndCell, event) =>
+
+    // Attaching mouse up on document, so that cell selection ends when user releases `mouse` outside table
+    const mouseUpEvt = () => {
+      end(event, cell.id)
+      document.removeEventListener('mouseup', mouseUpEvt)
+    }
+    document.addEventListener('mouseup', mouseUpEvt)
+  }
+
+  const selecting = (event, selectingEndCell) =>
     dispatch({ type: actions.cellRangeSelecting, selectingEndCell, event })
-  const end = (endCell, event) =>
+
+  const end = (event, endCell) =>
     dispatch({ type: actions.cellRangeSelectionEnd, endCell, event })
 
   return [
     props,
     {
       onMouseDown: e => {
-        e.persist() // event-pooling
-        start(cell.id, e)
-      },
-      onMouseUp: e => {
-        e.persist()
-        end(cell.id, e)
+        e.persist() // avoid event-pooling
+        start(e, cell.id)
       },
       onMouseEnter: e => {
         if (isSelectingCells) {
           e.persist()
-          selecting(cell.id, e)
+          selecting(e, cell.id)
         }
-      }
-    }
+      },
+    },
   ]
 }
 
 // currentSelectedCellIds: Is for currently selected range
 // selectedCellIds: Contains all selected cells
 // On cellRangeSelectionEnd: we move currentSelectedCellIds to selectedCellIds
-function reducer (state, action, previousState, instance) {
+function reducer(state, action, previousState, instance) {
   if (action.type === actions.init) {
     return {
       ...state,
-      selectedCellIds: { ...instance.initialState.selectedCellIds } || {},
+      selectedCellIds: { ...instance.initialState.selectedCellIds },
       isSelectingCells: false,
       startCellSelection: null,
       endCellSelection: null,
-      currentSelectedCellIds: {}
+      currentSelectedCellIds: {},
     }
   }
 
   if (action.type === actions.cellRangeSelectionStart) {
     const { startCell, event } = action
 
-    let newState = Object.assign(state.selectedCellIds, {})
-    if (event.ctrlKey === true) {
+    let newState = { ...state.selectedCellIds }
+
+    if (event.ctrlKey) {
       if (newState[startCell]) {
         delete newState[startCell]
       } else {
@@ -82,12 +90,9 @@ function reducer (state, action, previousState, instance) {
 
     return {
       ...state,
-      selectedCellIds:
-        {
-          ...newState
-        } || {},
+      selectedCellIds: { ...newState },
       isSelectingCells: true,
-      startCellSelection: startCell
+      startCellSelection: startCell,
     }
   }
 
@@ -95,7 +100,7 @@ function reducer (state, action, previousState, instance) {
     const { selectingEndCell } = action
     const {
       state: { startCellSelection },
-      getCellsBetweenId
+      getCellsBetweenId,
     } = instance
 
     // Get cells between cell ids (range)
@@ -104,13 +109,13 @@ function reducer (state, action, previousState, instance) {
     return {
       ...state,
       endCellSelection: selectingEndCell,
-      currentSelectedCellIds: newState
+      currentSelectedCellIds: newState,
     }
   }
 
   if (action.type === actions.cellRangeSelectionEnd) {
     const {
-      state: { selectedCellIds, currentSelectedCellIds }
+      state: { selectedCellIds, currentSelectedCellIds },
     } = instance
 
     return {
@@ -119,7 +124,7 @@ function reducer (state, action, previousState, instance) {
       isSelectingCells: false,
       currentSelectedCellIds: {},
       startCellSelection: null,
-      endCellSelection: null
+      endCellSelection: null,
     }
   }
 
@@ -131,25 +136,27 @@ function reducer (state, action, previousState, instance) {
 
     return {
       ...state,
-      selectedCellIds: selectedCellIds
+      selectedCellIds: selectedCellIds,
     }
   }
 }
 
-function useInstance (instance) {
-  const { dispatch, allColumns, rows } = instance
+function useInstance(instance) {
+  const {
+    dispatch,
+    allColumns,
+    rows,
+    cellIdSplitBy = defaultCellIdSplitBy,
+    state: { selectedCellIds, currentSelectedCellIds },
+  } = instance
 
   const cellsById = {}
-  // make user control the cellIdSplitter
-  const defaultCellIdSplitBy = '_col_row_'
-  let cellIdSplitBy = instance.cellIdSplitBy || defaultCellIdSplitBy
-  Object.assign(instance, { cellIdSplitBy })
 
   const setSelectedCellIds = React.useCallback(
     selectedCellIds => {
       return dispatch({
         type: actions.setSelectedCellIds,
-        selectedCellIds
+        selectedCellIds,
       })
     },
     [dispatch]
@@ -168,7 +175,7 @@ function useInstance (instance) {
       // get rows and columns index boundaries
       let rowsIndex = [
         cellsById[startCell].row.index,
-        cellsById[endCell].row.index
+        cellsById[endCell].row.index,
       ]
       let columnsIndex = []
       allColumns.forEach((col, index) => {
@@ -212,16 +219,15 @@ function useInstance (instance) {
   )
 
   Object.assign(instance, {
+    cellIdSplitBy,
     getCellsBetweenId,
     cellsById,
-    setSelectedCellIds
+    allSelectedCellIds: { ...currentSelectedCellIds, ...selectedCellIds },
+    setSelectedCellIds,
   })
 }
 
-function prepareRow (
-  row,
-  { instance: { cellsById, cellIdSplitBy }, instance }
-) {
+function prepareRow(row, { instance: { cellsById, cellIdSplitBy }, instance }) {
   row.allCells.forEach(cell => {
     cell.id = cell.column.id + cellIdSplitBy + row.id
     cellsById[cell.id] = cell
