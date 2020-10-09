@@ -147,10 +147,16 @@ function useInstance(instance) {
     allColumns,
     rows,
     cellIdSplitBy = defaultCellIdSplitBy,
+    cellsById = {},
     state: { selectedCellIds, currentSelectedCellIds },
   } = instance
 
-  const cellsById = {}
+  // Creating `currentIndex` so as to know what the correct index of row after other operations like filter, sort etc
+  React.useMemo(() => {
+    rows.forEach((row, index) => {
+      row.currentIndex = index
+    })
+  }, [rows])
 
   const setSelectedCellIds = React.useCallback(
     selectedCellIds => {
@@ -174,8 +180,8 @@ function useInstance(instance) {
 
       // get rows and columns index boundaries
       let rowsIndex = [
-        cellsById[startCell].row.index,
-        cellsById[endCell].row.index,
+        cellsById[startCell].row.currentIndex,
+        cellsById[endCell].row.currentIndex,
       ]
       let columnsIndex = []
       allColumns.forEach((col, index) => {
@@ -206,9 +212,12 @@ function useInstance(instance) {
       if (selectedRows.length && selectedColumns.length) {
         for (let i = 0; i < selectedRows.length; i++) {
           for (let j = 0; j < selectedColumns.length; j++) {
-            let id = selectedColumns[j] + cellIdSplitBy + selectedRows[i]
+            let id = selectedRows[i] + cellIdSplitBy + selectedColumns[j]
             let cell = cellsById[id]
-            cellsBetween[cell.id] = true
+            // sometimes cell cannot be found - reason -> may be prepareRow of that row has beed skipped due to large scrolling of segment
+            if (cell) {
+              cellsBetween[cell.id] = true
+            }
           }
         }
       }
@@ -229,7 +238,7 @@ function useInstance(instance) {
 
 function prepareRow(row, { instance: { cellsById, cellIdSplitBy }, instance }) {
   row.allCells.forEach(cell => {
-    cell.id = cell.column.id + cellIdSplitBy + row.id
+    cell.id = row.id + cellIdSplitBy + cell.column.id
     cellsById[cell.id] = cell
     cell.getCellRangeSelectionProps = makePropGetter(
       instance.getHooks().getCellRangeSelectionProps,
