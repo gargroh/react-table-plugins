@@ -68,6 +68,9 @@ function reducer (state, action, previousState, instance) {
 
   if (action.type === actions.cellRangeSelectionStart) {
     const { startCell, event } = action
+    const {
+      state: { startCellSelection }
+    } = instance
 
     let newState = Object.assign(state.selectedCellIds, {})
     if (event.ctrlKey === true) {
@@ -77,7 +80,10 @@ function reducer (state, action, previousState, instance) {
         newState[startCell] = true
       }
     } else {
-      newState = {}
+      //Single row selection
+      newState = {
+        [startCell]: true
+      }
     }
 
     return {
@@ -87,7 +93,7 @@ function reducer (state, action, previousState, instance) {
           ...newState
         } || {},
       isSelectingCells: true,
-      startCellSelection: startCell
+      startCellSelection: event.shiftKey ? (startCellSelection || startCell) : startCell
     }
   }
 
@@ -109,16 +115,23 @@ function reducer (state, action, previousState, instance) {
   }
 
   if (action.type === actions.cellRangeSelectionEnd) {
-    const {
-      state: { selectedCellIds, currentSelectedCellIds }
+    const {endCell, event} = action;
+    let {
+      state: {startCellSelection, selectedCellIds, currentSelectedCellIds },
+      getCellsBetweenId
     } = instance
+    
+    if (event.shiftKey) {
+      currentSelectedCellIds = getCellsBetweenId(startCellSelection, endCell)
+    }
 
     return {
       ...state,
       selectedCellIds: { ...selectedCellIds, ...currentSelectedCellIds },
       isSelectingCells: false,
       currentSelectedCellIds: {},
-      startCellSelection: null,
+      // commented we need to retain startCellSelection on shift selection.
+      // startCellSelection: event.shiftKey ? startCellSelection : null,
       endCellSelection: null
     }
   }
