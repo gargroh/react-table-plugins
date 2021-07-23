@@ -16,7 +16,7 @@
     "react-table": "^7.3.2",
     "react-table-plugins": "^1.0.0",
     "styled-components": "5.1.1",
-    "xlsx": "0.16.1"
+    "xlsx": "0.17.0"
   },
   "scripts": {
     "start": "react-scripts start",
