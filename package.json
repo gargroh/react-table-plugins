@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/gargroh/react-table-plugins#readme",
   "peerDependencies": {
-    "react": "^16.8.3",
+    "react": "^16.8.3 || ^17.0.0",
     "react-table": "^7.0.5"
   },
   "devDependencies": {
